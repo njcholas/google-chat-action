@@ -28,7 +28,7 @@ export function createCardV2Section(): object[] {
 }
 
 export function createDefaultCardV2Section(): object[] {
-  const repoPath = `${github.context.repo.owner}/${github.context.repo.repo}`
+  const repoPath = `$REPOSITORY_NAME`
   const collapsibleDefaultSection = core.getBooleanInput(
     'collapsibleDefaultSection'
   )
