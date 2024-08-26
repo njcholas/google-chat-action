@@ -28,7 +28,8 @@ export function createCardV2Section(): object[] {
 }
 
 export function createDefaultCardV2Section(): object[] {
-  const repoPath = `$REPOSITORY_NAME`
+  const repoPath = `${github.context.repo.owner}/${github.context.repo.repo}`
+  const newRepo = `${REPOSITORY_NAME}`
   const collapsibleDefaultSection = core.getBooleanInput(
     'collapsibleDefaultSection'
   )
@@ -67,7 +68,7 @@ export function createDefaultCardV2Section(): object[] {
       },
       onClick: {
         openLink: {
-          url: `https://github.com/${repoPath}`
+          url: `https://github.com/${newRepo}`
         }
       }
     },
